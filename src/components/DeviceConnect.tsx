@@ -21,10 +21,20 @@ export function DeviceConnect({ onReady, showSkip = true, onSkip }: DeviceConnec
   const hasConnection = eegConnected || cameraActive;
 
   return (
-    <div className="flex flex-col gap-6 w-full max-w-md mx-auto">
-      <div className="rounded-2xl p-6" style={{ background: 'var(--color-panel)', backdropFilter: 'blur(20px)' }}>
-        <h3 className="text-lg font-semibold mb-1">Connect Webcam</h3>
-        <p className="text-sm mb-4" style={{ color: 'var(--color-muted)' }}>
+    <div className="flex flex-col w-full max-w-lg mx-auto" style={{ gap: 'var(--space-md)' }}>
+      <div
+        className="rounded-lg"
+        style={{
+          padding: 'var(--space-lg)',
+          background: 'var(--color-panel)',
+          border: '1px solid var(--color-border)',
+        }}
+      >
+        <h3 className="text-lg font-semibold" style={{ marginBottom: '6px' }}>Connect Webcam</h3>
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: 'var(--color-muted)', marginBottom: '20px' }}
+        >
           Heart rate and HRV via facial video analysis
         </p>
         {cameraActive ? (
@@ -37,19 +47,29 @@ export function DeviceConnect({ onReady, showSkip = true, onSkip }: DeviceConnec
             type="button"
             onClick={() => enableCamera()}
             disabled={connecting.camera}
-            className="px-5 py-2 rounded-lg text-white font-medium text-sm cursor-pointer disabled:opacity-50"
+            className="px-6 py-3 rounded-lg text-white font-medium text-base cursor-pointer disabled:opacity-50"
             style={{ background: 'var(--color-primary)' }}
           >
             {connecting.camera ? 'Connecting...' : 'Enable Camera'}
           </button>
         )}
-        {error.camera && <p className="text-sm mt-2 text-red-500">{error.camera}</p>}
+        {error.camera && <p className="text-sm mt-3 text-red-600">{error.camera}</p>}
       </div>
 
       {wasmReady && (
-        <div className="rounded-2xl p-6" style={{ background: 'var(--color-panel)', backdropFilter: 'blur(20px)' }}>
-          <h3 className="text-lg font-semibold mb-1">Connect EEG Headband</h3>
-          <p className="text-sm mb-4" style={{ color: 'var(--color-muted)' }}>
+        <div
+          className="rounded-lg"
+          style={{
+            padding: 'var(--space-lg)',
+            background: 'var(--color-panel)',
+            border: '1px solid var(--color-border)',
+          }}
+        >
+          <h3 className="text-lg font-semibold" style={{ marginBottom: '6px' }}>Connect EEG Headband</h3>
+          <p
+            className="text-sm leading-relaxed"
+            style={{ color: 'var(--color-muted)', marginBottom: '20px' }}
+          >
             Brain wave analysis via Bluetooth headband
           </p>
           {eegConnected ? (
@@ -62,14 +82,14 @@ export function DeviceConnect({ onReady, showSkip = true, onSkip }: DeviceConnec
               type="button"
               onClick={() => connectHeadband()}
               disabled={connecting.eeg}
-              className="px-5 py-2 rounded-lg text-white font-medium text-sm cursor-pointer disabled:opacity-50"
-              style={{ background: 'var(--color-accent, #000080)' }}
-            >
-              {connecting.eeg ? 'Scanning...' : 'Connect Headband'}
+            className="px-6 py-3 rounded-lg text-white font-medium text-base cursor-pointer disabled:opacity-50"
+            style={{ background: 'var(--color-primary)' }}
+          >
+            {connecting.eeg ? 'Scanning...' : 'Connect Headband'}
             </button>
           )}
-          {error.eeg && <p className="text-sm mt-2 text-red-500">{error.eeg}</p>}
-          <p className="text-xs mt-3" style={{ color: 'var(--color-muted)' }}>
+          {error.eeg && <p className="text-sm mt-3 text-red-600">{error.eeg}</p>}
+          <p className="text-xs" style={{ color: 'var(--color-muted)', marginTop: '16px' }}>
             Requires Chrome or Edge with Web Bluetooth enabled
           </p>
         </div>
@@ -79,19 +99,19 @@ export function DeviceConnect({ onReady, showSkip = true, onSkip }: DeviceConnec
         <button
           type="button"
           onClick={() => enableMock()}
-          className="text-sm underline cursor-pointer"
-          style={{ color: 'var(--color-muted)' }}
+          className="text-sm font-medium underline cursor-pointer self-center"
+          style={{ color: 'var(--color-muted)', padding: 'var(--space-xs)' }}
         >
           Enable simulated signals (dev)
         </button>
       )}
 
-      <div className="flex gap-3 mt-2">
+      <div className="flex gap-4" style={{ marginTop: 'var(--space-xs)' }}>
         {hasConnection && onReady && (
           <button
             type="button"
             onClick={onReady}
-            className="flex-1 px-6 py-3 rounded-xl text-white font-medium text-base cursor-pointer"
+            className="flex-1 px-6 py-4 rounded-lg text-white font-medium text-base cursor-pointer"
             style={{ background: 'var(--color-calm)' }}
           >
             Continue
@@ -101,8 +121,12 @@ export function DeviceConnect({ onReady, showSkip = true, onSkip }: DeviceConnec
           <button
             type="button"
             onClick={onSkip}
-            className="px-6 py-3 rounded-xl font-medium text-base cursor-pointer border"
-            style={{ color: 'var(--color-muted)', borderColor: '#E5E5EA' }}
+            className="px-6 py-4 rounded-lg font-medium text-base cursor-pointer"
+            style={{
+              color: 'var(--color-muted)',
+              border: '1px solid var(--color-border)',
+              background: 'var(--color-panel)',
+            }}
           >
             Skip
           </button>

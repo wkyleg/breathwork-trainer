@@ -59,8 +59,30 @@ export const PROTOCOLS: BreathProtocol[] = [
   },
 ];
 
-export function getProtocol(id: string): BreathProtocol {
+export function getProtocol(id: string, customDurations?: { inhale: number; hold: number; exhale: number }): BreathProtocol {
+  if (id === 'custom' && customDurations) {
+    return buildCustomProtocol(customDurations.inhale, customDurations.hold, customDurations.exhale);
+  }
   return PROTOCOLS.find((p) => p.id === id) ?? PROTOCOLS[0];
+}
+
+export function buildCustomProtocol(inhale: number, hold: number, exhale: number): BreathProtocol {
+  const phases: BreathPhase[] = [
+    { name: 'inhale', label: 'INHALE', duration: inhale },
+  ];
+  if (hold > 0) {
+    phases.push({ name: 'holdIn', label: 'HOLD', duration: hold });
+  }
+  phases.push({ name: 'exhale', label: 'EXHALE', duration: exhale });
+
+  const cycleDuration = phases.reduce((sum, p) => sum + p.duration, 0);
+  return {
+    id: 'custom',
+    name: 'Custom',
+    description: `Custom ${inhale}-${hold}-${exhale} pattern.`,
+    phases,
+    cycleDuration,
+  };
 }
 
 export function getCurrentPhase(protocol: BreathProtocol, elapsedInCycle: number): { phase: BreathPhase; progress: number } {

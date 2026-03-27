@@ -1,29 +1,51 @@
 @import 'tailwindcss';
 
 :root {
-  --color-bg: #F5F7FA;
-  --color-panel: rgba(255, 255, 255, 0.82);
-  --color-primary: #007AFF;
-  --color-calm: #34C759;
-  --color-text: #1C1C1E;
-  --color-muted: #8E8E93;
+  --color-bg: #FAFAF8;
+  --color-panel: #FFFFFF;
+  --color-border: #E8E6E3;
+  --color-primary: #2D5A7B;
+  --color-calm: #5B8A72;
+  --color-accent: #C4784A;
+  --color-text: #1A1A1A;
+  --color-muted: #7A7A76;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  *, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    background: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
 }
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-}
-
-#root {
-  min-height: 100vh;
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }

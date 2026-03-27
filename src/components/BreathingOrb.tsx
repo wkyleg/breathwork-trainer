@@ -27,32 +27,31 @@ export function BreathingOrb({ phase, progress, coherence, reducedMotion = false
   }
 
   const wobble = coherence > 0.5 ? 0 : (1 - coherence) * 3;
-
-  const glowOpacity = 0.15 + coherence * 0.25;
-  const glowSize = 120 + coherence * 40;
+  const glowOpacity = 0.12 + coherence * 0.2;
+  const glowSize = 140 + coherence * 50;
 
   return (
-    <div className="relative flex items-center justify-center" style={{ width: 280, height: 280 }}>
+    <div className="relative flex items-center justify-center" style={{ width: 400, height: 400 }}>
       {!reducedMotion && (
         <motion.div
           className="absolute rounded-full"
           style={{
             width: glowSize,
             height: glowSize,
-            background: `radial-gradient(circle, rgba(0,122,255,${glowOpacity}) 0%, transparent 70%)`,
+            background: `radial-gradient(circle, rgba(45,90,123,${glowOpacity}) 0%, transparent 70%)`,
           }}
-          animate={{ scale: [1, 1.05, 1], opacity: [glowOpacity, glowOpacity * 1.2, glowOpacity] }}
-          transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: 'easeInOut' }}
+          animate={{ scale: [1, 1.05, 1], opacity: [glowOpacity, glowOpacity * 1.15, glowOpacity] }}
+          transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: 'easeInOut' }}
         />
       )}
 
       <motion.div
         className="rounded-full"
         style={{
-          width: 200,
-          height: 200,
-          background: `radial-gradient(circle at 40% 35%, rgba(255,255,255,0.4) 0%, rgba(0,122,255,0.6) 50%, rgba(0,100,220,0.8) 100%)`,
-          boxShadow: `0 0 40px rgba(0,122,255,${0.1 + coherence * 0.2}), inset 0 0 30px rgba(255,255,255,0.15)`,
+          width: 280,
+          height: 280,
+          background: 'radial-gradient(circle at 40% 35%, rgba(255,255,255,0.35) 0%, rgba(45,90,123,0.55) 50%, rgba(35,70,100,0.75) 100%)',
+          boxShadow: `0 0 50px rgba(45,90,123,${0.08 + coherence * 0.15}), inset 0 0 35px rgba(255,255,255,0.12)`,
         }}
         animate={{
           scale,
