@@ -8,6 +8,14 @@
 
 A breathwork training app with live biometric feedback. Follow paced breathing protocols while EEG and webcam heart rate sensors track how your nervous system responds in real time. Pick a protocol, breathe, and watch your body calm down.
 
+## Gameplay preview
+
+Desktop and mobile WebP captures (see [`docs/store-assets/`](docs/store-assets/) for full-size and listing assets).
+
+| Desktop | Mobile |
+| --- | --- |
+| ![Breathwork Trainer desktop gameplay](docs/store-assets/preview-desktop-01-1200w.webp) | ![Breathwork Trainer mobile](docs/store-assets/preview-mobile-01-800w.webp) |
+
 ## Features
 
 - **Guided breathing protocols** -- Box Breathing (Navy SEAL stress control), 4-7-8 (Dr. Andrew Weil relaxation method), Resonance Breathing (6 breaths/min for optimal HRV), and fully custom patterns
