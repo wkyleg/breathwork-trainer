@@ -1,0 +1,16 @@
+{
+  "name": "Breathwork Trainer",
+  "symbol": "BREATH",
+  "category": "WELLNESS",
+  "tags": ["breathwork", "biofeedback", "wellness", "EEG", "meditation"],
+  "description": "Guided breathing sessions with real-time biometric feedback. Pick a protocol, follow the pacer, and watch your nervous system respond. Box breathing, 4-7-8, resonance, or build your own pattern.",
+  "longDescription": "Breathwork Trainer pairs structured breathing exercises with live physiological measurement so you can actually see what's happening inside your body while you practice.\n\nChoose from proven protocols: Box Breathing (used by Navy SEALs for acute stress control), the 4-7-8 method (Dr. Andrew Weil's relaxation technique), Resonance Breathing (6 breaths per minute for optimal heart rate variability), or create your own custom pattern with adjustable inhale, hold, and exhale durations.\n\nDuring each session, connect an EEG headband or your webcam for heart rate tracking via facial video analysis. The app displays your EEG band powers, heart rate, HRV, and calmness score in real time as you breathe. After each session, review detailed charts that show exactly how your brain and body responded to the practice.\n\nNo wearables required to get started. Your webcam can measure heart rate through subtle skin color changes (remote photoplethysmography). For deeper neural data, pair a Muse headband over Bluetooth.\n\nBuilt for daily use. Clean interface, no clutter, just breathe and observe.",
+  "purchaseDescription": "Premium content includes advanced breathing protocols and guided session packs:\n\n- Extended Protocol Library: Wim Hof method, Tummo breathing, Pranayama sequences, and coherence training programs\n- Guided Sessions: 10, 20, and 30-minute structured sessions with progressive difficulty\n- Sleep Series: Evening wind-down sequences designed to lower arousal before bed\n- Performance Pack: Pre-competition breathing routines for athletes and high-pressure performers\n- Custom Protocol Sharing: Save and share your own breathing patterns with the community",
+  "tokenomicsDescription": "Token details and allocation specifics are being finalized. More information coming soon.",
+  "socialLinks": {
+    "twitter": "https://x.com/Elata_Bio",
+    "discord": "https://discord.gg/8UdPKztc6u",
+    "github": "https://github.com/Elata-Biosciences",
+    "website": "https://elata.bio"
+  }
+}
